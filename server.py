@@ -1,14 +1,10 @@
 #!/usr/bin/sudo python
-import io
 import os
-
-from PIL import Image
 from fastapi import FastAPI, File, UploadFile, Path
-from fastapi.encoders import jsonable_encoder
-from fastapi.responses import FileResponse, StreamingResponse, Response
-from pydantic import BaseModel
+from fastapi.responses import Response
 import uvicorn
-# App creation and model loading
+
+from image_process import image_to_byte_array
 from style_transfer_model import StyleTransferModel
 
 app = FastAPI()
@@ -87,13 +83,6 @@ def stylized_file_style_thumbnails(style_number: int = Path(..., title="The ID o
 #     file = jsonable_encoder({"imagePath": file_name})
 #     new_image = await add_image(file)
 #     return {"filename": new_image}
-
-
-def image_to_byte_array(image: Image):
-    img_byte_arr = io.BytesIO()
-    image.save(img_byte_arr, format='PNG')
-    return img_byte_arr.getvalue()
-
 
 if __name__ == '__main__':
     # Run server using given host and port

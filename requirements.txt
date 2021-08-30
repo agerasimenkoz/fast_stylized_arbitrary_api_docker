@@ -1,11 +1,9 @@
 # For matplotlib: sudo apt-get install python3-tk
 matplotlib==3.4.3
 numpy~=1.19.5
-pandas==1.2.4
 tensorflow==2.6.0
 tensorflow_hub
 Pillow~=8.3.1
 fastapi~=0.68.1
-pydantic~=1.8.2
 python-multipart
 uvicorn~=0.15.0
