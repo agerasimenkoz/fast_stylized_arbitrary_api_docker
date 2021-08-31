@@ -12,6 +12,9 @@
 * [Docker](https://www.docker.com/)
 * [tensorflow](https://www.tensorflow.org)
 
+## Used model
+[arbitrary-image-stylization-v1-256](https://tfhub.dev/google/magenta/arbitrary-image-stylization-v1-256/1)
+
 ## Source code
 * [server.py](server.py) contains API logic
 * [train.py](train.py) trains dummy model using Iris dataset
